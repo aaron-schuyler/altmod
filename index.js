@@ -27,6 +27,12 @@ const webpack = require('webpack');
 const bodyParser = require('body-parser')
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
+const cors = require('cors')
+const corsOptions = {
+    origin: ['localhost:8080'],
+    methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'], //the port my vue app is running on.
+    credentials: true,
+}
 //1.2 Mongo DB Connection
 mongoose.connect('mongodb+srv://admin:iHwPJzXf8uJokido@cluster0-znbrb.gcp.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true

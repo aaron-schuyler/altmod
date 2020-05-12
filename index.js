@@ -52,6 +52,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }))
 app.use(bodyParser.json())
+app.use(cors(corsOptions))
 //1.4 Mongo DB Models
 const Post = require("./models/post")
 const User = require('./models/user')

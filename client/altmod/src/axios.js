@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.withCredentials = false; // enable axios post cookie, default false
+axios.defaults.withCredentials = true; // enable axios post cookie, default false
 
 export default () => {
     return axios.create({

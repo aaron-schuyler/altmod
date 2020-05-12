@@ -29,7 +29,7 @@ const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const cors = require('cors')
 const corsOptions = {
-    origin: ['http://76.249.149.4:8080', 'http://localhost:8080'],
+    origin: ['http://76.249.149.4:8080', 'http://localhost:8080', 'http://altmod.net', 'http://www.altmod.net'],
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'], //the port my vue app is running on.
     credentials: true,
 }

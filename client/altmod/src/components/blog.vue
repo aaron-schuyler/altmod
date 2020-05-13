@@ -2,13 +2,15 @@
     <div class="blog">
         <div v-for="post in posts" v-bind:key="post.id">
             <article>
-                <h2>{{post.title}}</h2>
+                <h2>
+                    <router-link :to="'/blog/' + post.slug">{{post.title}}{{post.title}}</router-link>
+                </h2>
                 <div class="author">written by {{post.author}}</div>
                 <div class="date-time">{{formatDate(post.date)}}</div><br>
                 <div class="tags"><span v-for="tag in post.tags" :key="tag">{{tag}} </span></div>
                 <hr>
                 <p v-html="post.postBody"></p>
-                <div class="symbols">&#9913; &#9913; &#9913;</div>
+                <div class="symbols">* * *</div>
             </article>
 
         </div>

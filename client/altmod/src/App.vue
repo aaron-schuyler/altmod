@@ -16,20 +16,26 @@
         background: #000;
     }
 
+
+
     #app {
         font-family: Merriweather, serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: left;
         color: #ccc;
-        width: 600px;
-        margin: auto;
         font-weight: 400;
     }
 
-    #site-title {
 
-        font-weight: bold;
+    @media only screen and (min-width: 600px) {
+        #app {
+            width: 600px !important;
+            margin: auto !important;
+        }
+    }
+
+    #site-title {
         font-size: 40px;
     }
 
@@ -54,6 +60,11 @@
 
     article {
         margin-bottom: 50px;
+    }
+
+    h2 a {
+        color: inherit;
+        text-decoration: none;
     }
 
     .tags span {

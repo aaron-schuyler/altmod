@@ -121,6 +121,7 @@ app.get('/posts', (req, res) => {
 app.post('/posts', passport.authorize('local'), (req, res) => {
     var db = req.db
     var title = req.body.title
+    var slug = req.body.slug
     var author = req.body.author
     var postBody = req.body.postBody
     var date = new Date()
@@ -131,7 +132,8 @@ app.post('/posts', passport.authorize('local'), (req, res) => {
         author: author,
         postBody: postBody,
         date: date,
-        tags: tags
+        tags: tags,
+        slug: slug
 
     })
 
@@ -143,5 +145,16 @@ app.post('/posts', passport.authorize('local'), (req, res) => {
             success: true,
             message: 'Post saved successfully!',
         })
+    })
+})
+app.get('/posts/:slug', (req, res) => {
+    Post.find({
+        "slug": req.params.slug
+    }, function (error, post) {
+        if (error) {
+            console.error(error)
+        }
+        res.send(post)
+
     })
 })

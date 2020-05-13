@@ -3,10 +3,9 @@
 
         <h1>Welcome to Altmod!</h1>
 
-        <div class="symbols">&#9913; &#9913; &#9913;</div>
+        <div class="symbols">* * *</div>
 
         <p>Altmod is my experimental art project that will incorperate several mediums of creativity, using cutting edge web development languages to make an environment that makes exploring the content easy and intuitive.<br><br> This project will be home to design, music, and writing created by myself, and others as I expand. This project will never be finished, so in the meantime, feel free to check out the content that is already here. It's here for your enjoyment!</p>
-
     </div>
 </template>
 
@@ -43,6 +42,7 @@
     }
 
     .symbols {
+        font-family: monospace;
         text-align: center;
         width: 100%;
         margin: auto;

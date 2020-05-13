@@ -5,6 +5,11 @@ var PostSchema = new Schema({
         type: String,
         required: true
     },
+    slug: {
+        type: String,
+        unique: true,
+        required: true
+    },
     author: {
         type: String,
         required: true

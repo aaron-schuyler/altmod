@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../components/home.vue'
 import Blog from '../components/blog.vue'
+import Post from '../components/post.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
         path: "/blog",
         name: "Blog",
         component: Blog
+    },
+    {
+        path: "/blog/:slug",
+        name: "Post",
+        component: Post
     }
 ]
 

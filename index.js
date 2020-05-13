@@ -56,11 +56,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 app.use(cors(corsOptions))
 app.use(history())
-const staticFileMiddleware = express.static(path.join(__dirname))
-app.use(staticFileMiddleware)
-app.get('/', function (req, res) {
-    res.render(path.join(__dirname + '/index.html'))
-})
+
 //1.4 Mongo DB Models
 const Post = require("./models/post")
 const User = require('./models/user')

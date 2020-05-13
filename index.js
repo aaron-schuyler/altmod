@@ -19,6 +19,8 @@ A. This File
 //////////////////////////////////////////////////////
 ////1 CONFIG
 //1.1 Reqs
+const history = require('connect-history-api-fallback')
+const path = require('path')
 const express = require('express')
 const mongoose = require('mongoose', {
     useUnifiedTopology: true
@@ -53,6 +55,12 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 app.use(cors(corsOptions))
+app.use(history())
+const staticFileMiddleware = express.static(path.join(__dirname))
+app.use(staticFileMiddleware)
+app.get('/', function (req, res) {
+    res.render(path.join(__dirname + '/index.html'))
+})
 //1.4 Mongo DB Models
 const Post = require("./models/post")
 const User = require('./models/user')
